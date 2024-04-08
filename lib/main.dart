@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_application/common/blocs/bottom_nav_cubit/bottom_nav_cubit.dart';
 import 'package:flutter_shopping_application/common/widgets/main_wrapper.dart';
@@ -12,6 +14,7 @@ import 'package:flutter_shopping_application/test_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  HttpOverrides.global = MyhttpOverrides();
   await initLocator();
   runApp(
     MultiBlocProvider(
@@ -57,5 +60,14 @@ class _MyAppState extends State<MyApp> {
       title: 'Online shope',
       home: const SplashScreen(),
     );
+  }
+}
+
+class MyhttpOverrides extends HttpOverrides {
+  @override
+  HttpClient creatHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }

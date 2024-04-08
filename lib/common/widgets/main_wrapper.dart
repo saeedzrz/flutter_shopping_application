@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_shopping_application/common/widgets/bottom_nav.dart';
 import 'package:flutter_shopping_application/features/features_home/presentation/screens/home_screen.dart';
+import 'package:flutter_shopping_application/features/future_product/peresentation/screens/category_screen.dart';
 
 class MainWrapper extends StatelessWidget {
   static const routeName = "/main_wrapper";
@@ -9,9 +10,7 @@ class MainWrapper extends StatelessWidget {
   PageController pageController = PageController();
   List<Widget> topLevelScreens = [
     HomeScreen(),
-    Container(
-      color: Colors.black,
-    ),
+    CategoryScreen(),
     Container(
       color: Colors.amber,
     ),
@@ -42,3 +41,34 @@ class MainWrapper extends StatelessWidget {
     );
   }
 }
+
+///For Search Box
+// SafeArea(
+      //   child: SizedBox(
+      //     height: 600,
+      //     child: Column(
+      //       children: [
+      //         const SizedBox(
+      //           height: 10,
+      //         ),
+
+      //         /// search Box
+      //         Container(
+      //           decoration: BoxDecoration(color: Colors.white, boxShadow: [
+      //             BoxShadow(
+      //                 blurRadius: 2,
+      //                 color: Colors.grey.shade400,
+      //                 offset: const Offset(0, 3)),
+      //           ]),
+      //           child: Padding(
+      //             padding:
+      //                 const EdgeInsets.only(left: 10.0, right: 10, bottom: 10),
+      //             child: SearchTextField(
+      //               controller: searchController,
+      //               allProductsRepository: locator<AllProductRepository>(),
+      //             ),
+      //           ),
+      //         ),
+      //         const SizedBox(
+      //           height: 10,
+      //         ),

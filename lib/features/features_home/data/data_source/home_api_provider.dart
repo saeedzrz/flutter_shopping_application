@@ -12,7 +12,7 @@ class HomeApiProvider {
     final response =
         await dio.get("${Constants.baseUrl}/mainData", queryParameters: {
       "lat": lat,
-      "lon": lon,
+      "long": lon,
     }).onError((DioError error, stackTrace) {
       return CheckExeption.response(error.response!);
     });

@@ -13,7 +13,6 @@ class HomeRepository {
   Future<DataState<HomeModel>> fetchHomeData(lat, lon) async {
     try {
       Response response = await apiProvider.callHomeData(lat, lon);
-
       final HomeModel homeModel = HomeModel.fromJson(response.data);
       return DataSuccess(homeModel);
     } on AppExeption catch (e) {
