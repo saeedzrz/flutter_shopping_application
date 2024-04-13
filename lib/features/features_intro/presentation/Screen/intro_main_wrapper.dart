@@ -21,17 +21,17 @@ class IntroMainWrapper extends StatelessWidget {
       title: 'تخصص حرف اول رو میزنه!',
       description:
           'اپلیکیشن تخصصی خرید و فروش انواع قطعات یدکی خودروهای داخلی و خارجی با ضمانت اصالت کالا و نازلترین قیمت',
-      image: "assets/images/benz.png",
+      image: "assets/images/intro_1.jpg",
     ),
     const IntroPage(
       title: 'آسان خرید و فروش کن!',
       description: 'خرید و فروش سریع و آسان همراه با تیم پشتیبانی قوی',
-      image: "assets/images/bmw.png",
+      image: "assets/images/intro_2.jpg",
     ),
     const IntroPage(
       title: 'همه چی اینجا هست!',
       description: 'ثبت قطعات کمیاب و خرید و فروش عمده تنها با یک کلیک',
-      image: "assets/images/tara.png",
+      image: "assets/images/intro_3.png",
     ),
   ];
 
@@ -50,7 +50,7 @@ class IntroMainWrapper extends StatelessWidget {
                 top: 0,
                 child: Container(
                   decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 85, 123, 192),
+                    color: Color.fromARGB(255, 247, 247, 248),
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(150),
                     ),

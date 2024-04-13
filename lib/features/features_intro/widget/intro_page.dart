@@ -28,7 +28,10 @@ class IntroPage extends StatelessWidget {
             delayDuration: const Duration(milliseconds: 200),
             animationDuration: const Duration(seconds: 1),
             animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
-            child: Image.asset(image),
+            child: Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         const SizedBox(

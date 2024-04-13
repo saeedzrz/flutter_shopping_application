@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Container(
         width: width,
-        color: Colors.white,
+        color: Colors.black,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 animationDuration: const Duration(seconds: 1),
                 animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
                 child: Image.asset(
-                  'assets/images/Online_shop_Splash.jpg',
+                  'assets/images/sz.JPG',
                   width: width * 0.8,
                 ),
               ),
@@ -57,35 +57,36 @@ class _SplashScreenState extends State<SplashScreen> {
                 );
               }
               //if user offline
-              if (State.connectionStatus is ConnectionOff) {
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'به اینترنت وصل نیستید ',
-                      style: TextStyle(
-                        color: Colors.red,
-                      ),
-                    ),
-                    IconButton(
-                        onPressed: () {
-                          //check that we are online or not
-                          BlocProvider.of<SplashCubit>(context)
-                              .checkConnectionEvent();
-                        },
-                        icon: const Icon(
-                          Icons.autorenew,
-                          color: Colors.red,
-                        ))
-                  ],
-                );
-              }
+              // if (State.connectionStatus is ConnectionOff) {
+              //   return Row(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     children: [
+              //       const Text(
+              //         'به اینترنت وصل نیستید ',
+              //         style: TextStyle(
+              //           color: Colors.red,
+              //         ),
+              //       ),
+              //       IconButton(
+              //           onPressed: () {
+              //             //check that we are online or not
+              //             BlocProvider.of<SplashCubit>(context)
+              //                 .checkConnectionEvent();
+              //           },
+              //           icon: const Icon(
+              //             Icons.autorenew,
+              //             color: Colors.red,
+              //           ))
+              //     ],
+              //   );
+              // }
               // Defualt value
               return Container();
-            }, listener: (context, State) {
-              if (State.connectionStatus is ConnectionOn) {
+            },
+                listener: (context, State) {
+
                 gotoHome();
-              }
+
             }),
             const SizedBox(
               height: 30,

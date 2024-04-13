@@ -9,7 +9,7 @@ class BannerImg extends StatelessWidget {
     return Image.asset(
       image,
       width: MediaQuery.of(context).size.width,
-      fit: BoxFit.cover,
+      fit: BoxFit.fill,
     );
   }
 }

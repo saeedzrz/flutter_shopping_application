@@ -12,6 +12,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_shopping_application/locator.dart';
 import 'package:flutter_shopping_application/test_screen.dart';
 
+import 'features/feature_auth/Presention/bloc/signup_bloc.dart';
+import 'features/feature_auth/Presention/screens/mobile_signup_screen.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   HttpOverrides.global = MyhttpOverrides();
@@ -21,6 +24,7 @@ Future<void> main() async {
       providers: [
         BlocProvider(create: (_) => SplashCubit()),
         BlocProvider(create: (_) => BottomNavCubit()),
+        BlocProvider(create: (_) => locator<SignupBloc>()),
       ],
       child: const MyApp(),
     ),
@@ -55,6 +59,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         IntroMainWrapper.routeName: (context) => IntroMainWrapper(),
         MainWrapper.routeName: (context) => MainWrapper(),
+        MobileSignUpScreen.routeName: (context) => MobileSignUpScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Online shope',
